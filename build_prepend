@@ -1,0 +1,2 @@
+mv rdkafka-4.0.0/* .
+rm -rf rdkafka-4.0.0

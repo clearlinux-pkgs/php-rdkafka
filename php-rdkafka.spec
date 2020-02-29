@@ -4,7 +4,7 @@
 #
 Name     : php-rdkafka
 Version  : 4.0.0
-Release  : 2
+Release  : 3
 URL      : https://pecl.php.net//get/rdkafka-4.0.0.tgz
 Source0  : https://pecl.php.net//get/rdkafka-4.0.0.tgz
 Summary  : No detailed summary available
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : MIT
 Requires: php-rdkafka-lib = %{version}-%{release}
 BuildRequires : buildreq-php
+BuildRequires : pcre2-dev
 BuildRequires : pkgconfig(rdkafka)
 BuildRequires : util-linux
 
@@ -28,9 +29,14 @@ lib components for the php-rdkafka package.
 
 
 %prep
-%setup -q -n rdkafka-4.0.0
+%setup -q -c -n rdkafka-4.0.0
+cd %{_builddir}/rdkafka-4.0.0
 
 %build
+## build_prepend content
+mv rdkafka-4.0.0/* .
+rm -rf rdkafka-4.0.0
+## build_prepend end
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -47,4 +53,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20180731/rdkafka.so
+/usr/lib64/extensions/no-debug-non-zts-20190902/rdkafka.so
