@@ -4,7 +4,7 @@
 #
 Name     : php-rdkafka
 Version  : 5.0.1
-Release  : 12
+Release  : 13
 URL      : https://pecl.php.net/get/rdkafka-5.0.1.tgz
 Source0  : https://pecl.php.net/get/rdkafka-5.0.1.tgz
 Summary  : No detailed summary available
