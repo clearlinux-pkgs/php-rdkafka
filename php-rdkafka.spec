@@ -4,13 +4,14 @@
 #
 Name     : php-rdkafka
 Version  : 6.0.3
-Release  : 34
+Release  : 35
 URL      : https://pecl.php.net/get/rdkafka-6.0.3.tgz
 Source0  : https://pecl.php.net/get/rdkafka-6.0.3.tgz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
 Requires: php-rdkafka-lib = %{version}-%{release}
+Requires: php-rdkafka-license = %{version}-%{release}
 BuildRequires : buildreq-php
 BuildRequires : pcre2-dev
 BuildRequires : pkgconfig(rdkafka)
@@ -22,9 +23,18 @@ BuildRequires : pkgconfig(rdkafka)
 %package lib
 Summary: lib components for the php-rdkafka package.
 Group: Libraries
+Requires: php-rdkafka-license = %{version}-%{release}
 
 %description lib
 lib components for the php-rdkafka package.
+
+
+%package license
+Summary: license components for the php-rdkafka package.
+Group: Default
+
+%description license
+license components for the php-rdkafka package.
 
 
 %prep
@@ -40,6 +50,8 @@ phpize
 make  %{?_smp_mflags}
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/php-rdkafka
+cp %{_builddir}/rdkafka-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/php-rdkafka/78f5e4ea46cab953e344029e218c9b5fd9e9cc73
 %make_install
 
 
@@ -48,4 +60,8 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20210902/rdkafka.so
+/usr/lib64/extensions/no-debug-non-zts-20220829/rdkafka.so
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/php-rdkafka/78f5e4ea46cab953e344029e218c9b5fd9e9cc73
