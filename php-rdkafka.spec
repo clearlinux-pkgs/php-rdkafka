@@ -7,7 +7,7 @@
 #
 Name     : php-rdkafka
 Version  : 6.0.3
-Release  : 61
+Release  : 62
 URL      : https://pecl.php.net/get/rdkafka-6.0.3.tgz
 Source0  : https://pecl.php.net/get/rdkafka-6.0.3.tgz
 Summary  : No detailed summary available
