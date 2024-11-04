@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : php-rdkafka
-Version  : 6.0.4
-Release  : 77
-URL      : https://pecl.php.net/get/rdkafka-6.0.4.tgz
-Source0  : https://pecl.php.net/get/rdkafka-6.0.4.tgz
+Version  : 6.0.5
+Release  : 78
+URL      : https://pecl.php.net/get/rdkafka-6.0.5.tgz
+Source0  : https://pecl.php.net/get/rdkafka-6.0.5.tgz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -44,10 +44,10 @@ license components for the php-rdkafka package.
 
 
 %prep
-%setup -q -n rdkafka-6.0.4
-cd %{_builddir}/rdkafka-6.0.4
+%setup -q -n rdkafka-6.0.5
+cd %{_builddir}/rdkafka-6.0.5
 pushd ..
-cp -a rdkafka-6.0.4 buildavx2
+cp -a rdkafka-6.0.5 buildavx2
 popd
 
 %build
